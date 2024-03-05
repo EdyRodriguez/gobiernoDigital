@@ -1,64 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Nombre del Proyecto
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Desarrollado por: Edgar Fernando Rodriguez Rangel
 
-## About Laravel
+Este proyecto es un sistema de gestión de usuarios con autenticación JWT, que incluye funcionalidades de CRUD para usuarios con diferentes roles (administrador y usuario común).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Requisitos Previos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Antes de comenzar, asegúrate de tener instalado:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 7.3
+- Composer
+- MySQL o MariaDB
+- Laravel
 
-## Learning Laravel
+### Instrucciones para Desplegar el Sistema
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Clonar el Repositorio**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Instalar Dependencias**
+Dentro del directorio del proyecto, ejecuta:
 
-## Laravel Sponsors
+3. **Configuración de Entorno**
+Copia el archivo `.env.example` a `.env` y ajusta las variables de entorno, especialmente las relacionadas con la base de datos:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+4. **Generar Clave de Aplicación**
 
-### Premium Partners
+5. **Migraciones y Seeders**
+Para crear las tablas en tu base de datos y poblarlas con datos iniciales, ejecuta:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+6. **Generar Clave Secreta JWT**
 
-## Contributing
+7. **Servidor de Desarrollo**
+Para iniciar el servidor de desarrollo:
+    ```bash php artisan serve```
+Ahora puedes acceder al proyecto en `http://localhost:8000`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Observaciones Generales
 
-## Code of Conduct
+- **Opiniones**: Este proyecto fue un reto interesante que me permitió profundizar en el uso de Laravel y la autenticación JWT. Me enfrenté a problemas específicos como la gestión de roles y permisos que fueron un gran aprendizaje.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Mejoras Futuras**: Algunas mejoras que consideraría serían la implementación de tests automatizados para asegurar la calidad del código, mejorar la documentación interna del código, implementar mejor calidad en los endpoint, mejorar la seguridad del sistema,
+agregar CI/CD para automatizar el despliegue y la integración de herramientas de monitoreo y análisis de rendimiento.
 
-## Security Vulnerabilities
+- **Autocrítica**: Aunque el proyecto cumple con los requisitos básicos, reconozco que siempre hay espacio para mejorar, especialmente en la optimización del código y en la seguridad del sistema para proteger los datos de los usuarios,
+hubo problemas con la implementación de roles y permisos, y al final trate de dockerizar el proyecto pero no por errores dentro de la comunicacion del proyecto con la base de datos no logre hacerlo funcionar de manera correcta.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Licencia
 
-## License
+Especifica aquí la licencia bajo la cual has liberado el proyecto, si aplica.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+Gracias por revisar este proyecto. Para cualquier consulta o colaboración, no dudes en contactarme.
