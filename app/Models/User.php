@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -22,6 +23,32 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_roles', 'user_id', 'role_id');
+    }
+
+    public function hasRole($roleName)
+    {
+        foreach ($this->roles as $role) {
+            if (strtolower($role->name) == strtolower($roleName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.
